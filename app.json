@@ -1,0 +1,12 @@
+{
+  "name": "calorie-counter",
+  "displayName": "calorie-counter",
+  "expo": {
+    "name": "calorie-counter",
+    "slug": "calorie-counter",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
