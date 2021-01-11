@@ -1,0 +1,12 @@
+
+
+do SeeCals page
+    - page deisgn
+    - hook up reading
+    - hook up deleting
+do stats
+    - page design
+    - hook up reading
+    - hook up deleting
+Persistance vai async and telling if its a new day and then creating a new entry
+    - perhaps key to get into async storage can be based on the day and it can store an entire redux object if existing to be loading in for a reboot in a day 
