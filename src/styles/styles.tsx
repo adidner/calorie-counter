@@ -112,5 +112,12 @@ export const styles = StyleSheet.create({
    
    addCalTopContianer:{
        flexDirection: 'row',
+   },
+
+   caloryEntryElementContainer:{
+       flexDirection: 'row',
+       backgroundColor: 'pink',
+       alignItems: 'flex-start',
+       justifyContent:'space-around',
    }
 });

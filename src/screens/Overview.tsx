@@ -62,22 +62,22 @@ export default function Overview(props: any){
             </View>
 
             <View style={styles.mealContianer}>
-                <TouchableOpacity style={styles.mealRow}>
+                <TouchableOpacity style={styles.mealRow} onPress={() => {props.navigation.navigate('SeeCals', {meal: 'breakfast'});}}>
                     <Text style={styles.mealText}>Breakfast</Text>
                     <Text style={styles.mealText}>{breakfastCalories}</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.mealRow}>
+                <TouchableOpacity style={styles.mealRow} onPress={() => {props.navigation.navigate('SeeCals', {meal: 'lunch'});}}>
                     <Text style={styles.mealText}>Lunch</Text>
                     <Text style={styles.mealText}>{lunchCalories}</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.mealRow}>
+                <TouchableOpacity style={styles.mealRow} onPress={() => {props.navigation.navigate('SeeCals', {meal: 'dinner'});}}>
                     <Text style={styles.mealText}>Dinner</Text>
                     <Text style={styles.mealText}>{dinnerCalories}</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.mealRow}>
+                <TouchableOpacity style={styles.mealRow} onPress={() => {props.navigation.navigate('SeeCals', {meal: 'snacks'});}}>
                     <Text style={styles.mealText}>Snacks</Text>
                     <Text style={styles.mealText}>{snackCalories}</Text>
                 </TouchableOpacity>

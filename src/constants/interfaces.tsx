@@ -1,3 +1,5 @@
+import { caloryEntryElement } from "../screens/SeeCals";
+
 export interface calorieEntry{
     calories: number;
     note: string;
@@ -33,4 +35,9 @@ export interface stats{
     dateOfBirth: string;
     age: number;
     goalWeight: number;
+}
+
+export interface caloryEntryElementProps{
+    food: calorieEntry;
+    mealName: string;
 }
