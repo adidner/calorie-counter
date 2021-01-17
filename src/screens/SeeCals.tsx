@@ -15,7 +15,6 @@ export default function SeeCals(props: any){
     let dinnerCalorieList = useSelector(getDinnerCalorieList);
     let snacksCalorieList = useSelector(getSnacksCalorieList);
 
-
     useEffect(() => {
         if(mealName == 'breakfast'){ 
            setCalorieList(breakfastCalorieList);
@@ -33,20 +32,19 @@ export default function SeeCals(props: any){
     
     let mealNameTitle = mealName.charAt(0).toUpperCase() + mealName.slice(1);
 
-    //console.log("claorieList", calorieList);
 
     return (
-        <View style={{flex: 1}}>
-            <Text>{mealNameTitle}</Text>
+        <View style={{flex: 1,}}>
+            <Text style={styles.seeCalsTitle}>{mealNameTitle}</Text>
             <View style={styles.caloryEntryElementContainer}>
-                <TextInput value={"Calories"} editable={false} selectTextOnFocus={false}/>
-                <TextInput value={"Note"}  editable={false} selectTextOnFocus={false}/>
-                <TextInput value={"Delete"}  editable={false} selectTextOnFocus={false}/>
+                <View style={styles.caloryEntryElementCalorieText}><Text style={styles.caloryEntryElementTitleText}>Calories</Text></View>
+                <View style={styles.caloryEntryElementNoteText}><Text style={styles.caloryEntryElementTitleText}>Note</Text></View>
+                <TouchableOpacity style={styles.caloryEntryElementDeleteText} disabled={true}><Text style={styles.caloryEntryElementTitleText}>Delete</Text></TouchableOpacity>
             </View>
+            
             
             {calorieList.map(current => 
                 {
-                    console.log("current", current);
                     return(
                         <CaloryEntryElement
                             food={current}
@@ -81,9 +79,9 @@ export function CaloryEntryElement(props: caloryEntryElementProps){
 
     return(
         <View style={styles.caloryEntryElementContainer}>
-            <TextInput value={props.food.calories.toString()} editable={false} selectTextOnFocus={false}/>
-            <TextInput value={props.food.note} editable={false} selectTextOnFocus={false}/>
-            <TouchableOpacity><Text>Delete</Text></TouchableOpacity>
+            <View style={styles.caloryEntryElementCalorieText}><Text style={styles.caloryEntryElementLiText}>{props.food.calories.toString()}</Text></View>
+            <View style={styles.caloryEntryElementNoteText}><Text style={styles.caloryEntryElementLiText}>{props.food.note}</Text></View>
+            <TouchableOpacity style={styles.caloryEntryElementDeleteText} onPress={() => onDelete()}><Text style={styles.caloryEntryElementLiText}>Delete</Text></TouchableOpacity>
         </View>
     );
 }

@@ -118,6 +118,39 @@ export const styles = StyleSheet.create({
        flexDirection: 'row',
        backgroundColor: 'pink',
        alignItems: 'flex-start',
-       justifyContent:'space-around',
-   }
+       justifyContent:'flex-start',
+   },
+
+    caloryEntryElementCalorieText: {
+        flex: 1,
+        paddingVertical: 7,
+        paddingHorizontal: 9,
+    }, 
+
+    caloryEntryElementNoteText: {
+        flex: 1,
+        paddingVertical: 7,
+        paddingHorizontal: 9,
+    }, 
+
+    caloryEntryElementDeleteText: {
+        flex: 1,
+        paddingVertical: 7,
+        paddingHorizontal: 9,
+    },
+
+    caloryEntryElementTitleText: {
+        fontWeight: 'bold',
+        fontSize: 20,
+    },
+
+    caloryEntryElementLiText:{
+        fontSize: 20,
+    },
+
+    seeCalsTitle:{
+        fontSize: 28,
+    }, 
+
+
 });

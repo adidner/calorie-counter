@@ -1,13 +1,15 @@
 
 
 do SeeCals page
-    - page deisgn
-    - hook up reading
-    - hook up deleting
+    -̶ h̶o̶o̶k̶ u̶p̶ r̶e̶a̶d̶i̶n̶g̶
+    -̶ p̶a̶g̶e̶ d̶e̶i̶s̶g̶n̶
+    - deleting, see why updates to redux store aren't triggering re-render
+
 do stats
     - page design
     - hook up reading
     - hook up deleting
+
 Persistance vai async and telling if its a new day and then creating a new entry
     - perhaps key to get into async storage can be based on the day and it can store an entire redux object if existing to be loading in for a reboot in a day 
 

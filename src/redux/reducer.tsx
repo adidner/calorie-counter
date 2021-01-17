@@ -1,9 +1,28 @@
-import {actionInterface, APPEND_BREAKFAST, APPEND_DINNER, APPEND_LUNCH, APPEND_SNACKS, DELETE_BREAKFAST, DELETE_DINNER, DELETE_LUNCH, DELETE_SNACKS} from './actions';
+import {actionInterface, APPEND_BREAKFAST, APPEND_DINNER, APPEND_LUNCH, APPEND_SNACKS, DELETE_BREAKFAST, DELETE_DINNER, DELETE_LUNCH, DELETE_SNACKS, OVERRIDE_STATE} from './actions';
 import {reduxState} from '../constants/interfaces';
 import { createGuid } from '../Utils';
+import AsyncStorage from '@react-native-community/async-storage';
   
-const initialState: reduxState = {
-    breakFastCalorieList: [{calories: 20, note: "hi", guid:createGuid() }], 
+  let date = new Date();
+  let formattedDate = (date.getMonth() + 1).toString() + date.getDate().toString() + date.getFullYear().toString();
+
+  let previousState = null
+
+  const getData = async () => {
+      try {
+        const value = await AsyncStorage.getItem(formattedDate)
+        if(value !== null) {
+          previousState = JSON.parse(value);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    getData();
+
+const initialState: reduxState = previousState != null ? previousState : {
+    breakFastCalorieList: [{calories: 20, note: "hi", guid:createGuid() },{calories: 80, note: "hello", guid:createGuid() },{calories: 69420, note: "tihi", guid:createGuid() }], 
     lunchCalorieList: [],
     dinnerCalorieList: [],
     snacksCalorieList: [{calories: 505, note:"cornbeef", guid:createGuid()}],
@@ -54,7 +73,9 @@ const initialState: reduxState = {
                 lunchCalorieList: newLunchCalorieList
             })
         case DELETE_BREAKFAST:
-            let newBreakfastCalorieList = state.breakFastCalorieList.filter((currentValue) => !(currentValue.guid == action.value.guid));
+            console.log("delete breakfast", action.value);
+            let newBreakfastCalorieList = Array.from(state.breakFastCalorieList);
+            newBreakfastCalorieList = newBreakfastCalorieList.filter((currentValue) => !(currentValue.guid == action.value.guid));
             return Object.assign({}, state, {
                 breakFastCalorieList: newBreakfastCalorieList
             })
@@ -68,6 +89,8 @@ const initialState: reduxState = {
             return Object.assign({}, state, {
                 snacksCalorieList: newSnacksCalorieList
             })
+        case OVERRIDE_STATE:
+            return Object.assign({}, action.value)
         
         default:
             return state;

@@ -43,6 +43,7 @@ export default function Overview(props: any){
     let dinnerCalories = useSelector(getDinnerCalories);
     let snackCalories = useSelector(getSnacksCalories);
 
+    
 
     return (
         <View style={styles.overViewContianer}>

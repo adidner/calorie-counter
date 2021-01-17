@@ -9,7 +9,7 @@ import { appendBreakfast, appendDinner, appendLunch, appendSnacks } from "../red
 export default function AddCal(props: any){
     const [calories, setCalories] = useState("");
     const [note, setNote] = useState("");
-    const [selectedMeal, setSelectedMeal] = useState<"breakfast" | "dinner" | "lunch" | "snacks">("breakfast");
+    const [selectedMeal, setSelectedMeal] = useState<"breakfast" | "dinner" | "lunch" | "snacks">("snacks");
 
     const dispatch = useDispatch();
 

@@ -1,4 +1,4 @@
-import {calorieEntry} from '../constants/interfaces';
+import {calorieEntry, reduxState} from '../constants/interfaces';
 
 export interface actionInterface{
     type: string;
@@ -14,6 +14,7 @@ export const DELETE_LUNCH = "DELETE_LUNCH";
 export const DELETE_BREAKFAST = "DELETE_BREAKFAST";
 export const DELETE_DINNER = "DELETE_DINNER";
 export const DELETE_SNACKS = "DELETE_SNACKS";
+export const OVERRIDE_STATE = "OVERRIDE_STATE";
 
 export function appendLunch(value: calorieEntry){
     return {type: APPEND_LUNCH, value: value}
@@ -46,6 +47,10 @@ export function deleteDinner(value: calorieEntry){
 
 export function deleteSnacks(value: calorieEntry){
     return {type: DELETE_SNACKS, value: value}
+}
+
+export function overrideState(value: reduxState){
+    return {type: OVERRIDE_STATE, value:value}
 }
 
 
