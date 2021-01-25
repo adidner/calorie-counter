@@ -20,15 +20,15 @@ export default function SeeCals(props: any){
            setCalorieList(breakfastCalorieList);
         }
         else if(mealName == 'lunch'){
-            setCalorieList(lunchCalorieList)
+            setCalorieList(lunchCalorieList);
         }
         else if(mealName == 'dinner'){
-            setCalorieList(dinnerCalorieList)
+            setCalorieList(dinnerCalorieList);
         }
         else if(mealName == 'snacks'){
-            setCalorieList(snacksCalorieList)
+            setCalorieList(snacksCalorieList);
         }
-    }, []);
+    });
     
     let mealNameTitle = mealName.charAt(0).toUpperCase() + mealName.slice(1);
 
