@@ -1,7 +1,6 @@
 import { reduxState, stats } from "../constants/interfaces";
 
 export function getBreakfastCalorieList(state: reduxState){
-    console.log("should trigger here");
     return state.breakFastCalorieList;
 }
 

@@ -1,27 +1,9 @@
 import {actionInterface, APPEND_BREAKFAST, APPEND_DINNER, APPEND_LUNCH, APPEND_SNACKS, DELETE_BREAKFAST, DELETE_DINNER, DELETE_LUNCH, DELETE_SNACKS, OVERRIDE_STATE} from './actions';
 import {reduxState} from '../constants/interfaces';
 import { createGuid } from '../Utils';
-import AsyncStorage from '@react-native-community/async-storage';
-  
-  let date = new Date();
-  let formattedDate = (date.getMonth() + 1).toString() + date.getDate().toString() + date.getFullYear().toString();
 
-  let previousState = null
 
-  const getData = async () => {
-      try {
-        const value = await AsyncStorage.getItem(formattedDate)
-        if(value !== null) {
-          previousState = JSON.parse(value);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    getData();
-
-const initialState: reduxState = previousState != null ? previousState : {
+const initialState: reduxState = {
     breakFastCalorieList: [{calories: 20, note: "hi", guid:createGuid() },{calories: 80, note: "hello", guid:createGuid() },{calories: 69420, note: "tihi", guid:createGuid() }], 
     lunchCalorieList: [],
     dinnerCalorieList: [],
@@ -89,8 +71,8 @@ const initialState: reduxState = previousState != null ? previousState : {
             return Object.assign({}, state, {
                 snacksCalorieList: newSnacksCalorieList
             })
-        case OVERRIDE_STATE:
-            return Object.assign({}, action.value)
+        // case OVERRIDE_STATE:
+        //     return Object.assign({}, action.value)
         
         default:
             return state;
