@@ -24,6 +24,8 @@ export default function App() {
   const storeObj = getStore();
   const store = storeObj.store;
   const persistor = storeObj.persistor;
+  console.log("store", store);
+  console.log("persistor", persistor);
   
   return (
     <Provider store={store}>

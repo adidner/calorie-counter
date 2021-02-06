@@ -3,15 +3,25 @@
 do SeeCals page
     -̶ h̶o̶o̶k̶ u̶p̶ r̶e̶a̶d̶i̶n̶g̶
     -̶ p̶a̶g̶e̶ d̶e̶i̶s̶g̶n̶
-    - deleting, see why updates to redux store aren't triggering re-render
+    -̶ d̶e̶l̶e̶t̶i̶n̶g̶,̶ s̶e̶e̶ w̶h̶y̶ u̶p̶d̶a̶t̶e̶s̶ t̶o̶ r̶e̶d̶u̶x̶ s̶t̶o̶r̶e̶ a̶r̶e̶n̶'̶t̶ t̶r̶i̶g̶g̶e̶r̶i̶n̶g̶ r̶e̶-̶r̶e̶n̶d̶e̶r̶
+
+Persistance vai async and telling if its a new day and then creating a new entry
+    -̶ s̶t̶a̶r̶t̶e̶d̶ u̶s̶i̶n̶g̶ r̶e̶d̶u̶x̶ P̶e̶r̶s̶i̶s̶t̶
+    -̶ N̶o̶w̶ g̶o̶t̶t̶a̶ f̶i̶g̶u̶r̶e̶ o̶u̶t̶ w̶h̶y̶ i̶t̶ i̶s̶n̶'̶t̶ w̶o̶r̶k̶i̶n̶g̶ a̶s̶ I̶ w̶a̶n̶t̶
+    -̶ T̶h̶e̶n̶ w̶e̶ h̶a̶v̶e̶ t̶o̶ m̶a̶k̶e̶ s̶u̶r̶e̶ s̶a̶i̶d̶ d̶a̶t̶a̶ s̶a̶v̶e̶s̶ a̶c̶c̶o̶r̶d̶i̶n̶l̶y̶ a̶s̶ w̶e̶l̶l̶ (̶m̶i̶g̶h̶t̶ b̶e̶ a̶u̶t̶o̶m̶a̶t̶i̶c̶ i̶d̶k̶)̶
+    -̶ T̶h̶e̶n̶ g̶o̶t̶t̶a̶ d̶o̶ 2̶ c̶a̶l̶l̶s̶ a̶n̶d̶ a̶ c̶o̶m̶b̶i̶n̶e̶ b̶e̶c̶a̶u̶s̶e̶ s̶o̶m̶e̶ d̶a̶t̶a̶ w̶e̶ w̶a̶n̶t̶ f̶r̶o̶m̶ t̶h̶e̶ d̶a̶y̶ a̶n̶d̶ s̶o̶m̶e̶ w̶e̶ w̶a̶n̶t̶ f̶o̶r̶m̶ i̶n̶ g̶e̶n̶e̶r̶a̶l̶,̶
 
 do stats
     - page design
+    - icon for menu gear
+    - actual page implementation
     - hook up reading
     - hook up deleting
+    - decide for persistance if we want, to make 2 reducers and do 2 calls to set up to the redux persist stuff
+    - or if we just want to use asyncStorage and when we load the page we grab from async and when we leave we give back to async. 
 
-Persistance vai async and telling if its a new day and then creating a new entry
-    - perhaps key to get into async storage can be based on the day and it can store an entire redux object if existing to be loading in for a reboot in a day 
+
+
 
 
 test

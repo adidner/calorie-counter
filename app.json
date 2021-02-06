@@ -7,6 +7,14 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "ios": {
+      "bundleIdentifier": "com.didnerapps.caloriecounter",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.didnerapps.caloriecounter",
+      "versionCode": 1
+    }
   }
 }
